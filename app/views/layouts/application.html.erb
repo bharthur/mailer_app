@@ -11,6 +11,7 @@
       <div class="header clearfix">
         <h3 class="text-muted">Mailer App</h3>
       </div>
+      <%= render partial: "shared/flash_messages", flash: flash %> 
       <%= yield %>
       <footer class="footer">
         <p>© Shiva Bharthur 2017</p>

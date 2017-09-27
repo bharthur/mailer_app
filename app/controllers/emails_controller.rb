@@ -6,7 +6,10 @@ class EmailsController < ApplicationController
       @email = Email.new(email_params)
       if @email.valid?
           EmailMailer.send_email(@email).deliver
+          flash[:success] = "Email was successfully sent to #{@email.to}!"
+          redirect_to "/"
       else
+        flash[:error] = "Please correct the following errors and re-submit!"
         render 'index'
       end
     end
